@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# 忽略生成的可执行文件目录
+/source/out
+
+# 忽略所有的out目录
+out/
