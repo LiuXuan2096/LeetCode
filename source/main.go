@@ -1,26 +1,16 @@
 package main
 
 import (
-	"LeetCode-go/source/Go_src"
+	"LeetCode-go/source/Go_LeetCode"
 	"fmt"
 )
 
 func main() {
-	node3 := Go_src.TreeNode{
-		Val:   3,
-		Left:  nil,
-		Right: nil,
-	}
-	node2 := Go_src.TreeNode{
-		Val:   2,
-		Left:  &node3,
-		Right: nil,
-	}
-	node1 := Go_src.TreeNode{
-		Val:   1,
-		Left:  nil,
-		Right: &node2,
-	}
-	res := Go_src.InorderTraversal(&node1)
-	fmt.Println(res)
+	var input [][]int
+	var p []int = []int{1, 0}
+	var p2 = []int{0, 1}
+	input = append(input, p)
+	input = append(input, p2)
+
+	fmt.Println(Go_LeetCode.CanFinish(2, input))
 }

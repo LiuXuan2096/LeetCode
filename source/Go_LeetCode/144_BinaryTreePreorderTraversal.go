@@ -3,7 +3,7 @@ https://leetcode.cn/problems/binary-tree-preorder-traversal/description/
 非递归实现二叉树的前序遍历
 */
 
-package Go_src
+package Go_LeetCode
 
 type TreeNode struct {
 	Val   int

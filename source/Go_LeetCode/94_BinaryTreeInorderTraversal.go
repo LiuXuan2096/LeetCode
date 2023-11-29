@@ -3,7 +3,7 @@ https://leetcode.cn/problems/binary-tree-inorder-traversal/
 非递归方式实现二叉树的中序遍历
 */
 
-package Go_src
+package Go_LeetCode
 
 func InorderTraversal(root *TreeNode) []int {
 	res := make([]int, 0)

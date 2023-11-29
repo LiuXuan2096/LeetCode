@@ -1,4 +1,4 @@
-package Go_src
+package Go_LeetCode
 
 /**
 * Definition for singly-linked list.*/
