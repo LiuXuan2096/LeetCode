@@ -6,11 +6,6 @@ import (
 )
 
 func main() {
-	var input [][]int
-	var p []int = []int{1, 0}
-	var p2 = []int{0, 1}
-	input = append(input, p)
-	input = append(input, p2)
-
-	fmt.Println(Go_LeetCode.CanFinish(2, input))
+	var arr = []int{2, 5, 4, 2, 4, 5, 3, 1, 2, 4}
+	fmt.Println(Go_LeetCode.Max2(arr))
 }
