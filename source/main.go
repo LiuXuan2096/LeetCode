@@ -6,6 +6,8 @@ import (
 )
 
 func main() {
-	var arr = []int{2, 5, 4, 2, 4, 5, 3, 1, 2, 4}
-	fmt.Println(Go_LeetCode.Max2(arr))
+	var nums = []int{3, 2, 1, 5, 6, 4, 6}
+	var k = 2
+	result := Go_LeetCode.FfindKthLargest(nums, k)
+	fmt.Println(result)
 }
