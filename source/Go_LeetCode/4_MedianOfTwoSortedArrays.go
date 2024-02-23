@@ -138,9 +138,9 @@ func getUpMedian(A []int, s1, e1 int, B []int, s2, e2 int) int {
 	return min(A[s1], B[s2])
 }
 
-func min(a, b int) int {
-	if a <= b {
-		return a
-	}
-	return b
-}
+//func min(a, b int) int {
+//	if a <= b {
+//		return a
+//	}
+//	return b
+//}

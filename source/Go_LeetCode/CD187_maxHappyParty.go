@@ -43,16 +43,16 @@ type Info1 struct {
 	yes int // 该节点来时，以该节点为根节点的树的最大快乐值
 }
 
-func process1(node *Node1) *Info1 {
-	if node == nil {
-		return &Info1{0, 0}
-	}
-	var no = 0
-	var yes = node.happyVal
-	for _, val := range node.children {
-		var info *Info1 = process1(val)
-		no += int(math.Max(float64(info.no), float64(info.yes)))
-		yes += info.yes
-	}
-	return &Info1{no, yes}
-}
+//func process1(node *Node1) *Info1 {
+//	if node == nil {
+//		return &Info1{0, 0}
+//	}
+//	var no = 0
+//	var yes = node.happyVal
+//	for _, val := range node.children {
+//		var info *Info1 = process1(val)
+//		no += int(math.Max(float64(info.no), float64(info.yes)))
+//		yes += info.yes
+//	}
+//	return &Info1{no, yes}
+//}
