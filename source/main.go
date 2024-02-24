@@ -6,7 +6,8 @@ import (
 )
 
 func main() {
-	arr := []int{5, 7, 4, 5, 8, 1, 6, 0, 3, 4, 6, 1, 7}
-	result := from_forceRecursive_to_DP.Win3(arr)
-	fmt.Printf("Winning Score: %d\n", result)
+	s1 := "a12b3c456d"
+	s2 := "1ef23ghi4j56k"
+	result := from_forceRecursive_to_DP.LongestCommonSubsequence2(s1, s2)
+	fmt.Println(result)
 }
