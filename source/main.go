@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
-
-	fmt.Println(from_forceRecursive_to_DP.Jump_dp(7, 7, 10))
+	N := 8
+	fmt.Println(from_forceRecursive_to_DP.NQueens(N))
+	//fmt.Println(from_forceRecursive_to_DP.SplitSumClosedSize_dp(arr))
 }
