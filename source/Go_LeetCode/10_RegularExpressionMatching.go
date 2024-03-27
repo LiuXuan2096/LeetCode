@@ -60,7 +60,8 @@ func process1(str, pattern []rune, si, pi int) bool {
 	}
 	return false
 }
-
+*/
+// 这是将上文的暴力递归版本改成记忆化搜索的版本，其实这一步已经是动态规划了
 func isValid(str []rune, pattern []rune) bool {
 	for _, ch := range str {
 		if ch == '.' || ch == '*' {
@@ -68,13 +69,79 @@ func isValid(str []rune, pattern []rune) bool {
 		}
 	}
 	for i := 0; i < len(pattern); i++ {
-		if pattern[i] == '*' && i == 0  {
+		if pattern[i] == '*' && i == 0 {
 			return false
 		}
 	}
 	return true
 }
-*/
-func isMatch(s string, p string) bool {
 
+func isMatch2(s string, p string) bool {
+	if s == "" || p == "" {
+		return false
+	}
+	str := []rune(s)
+	pattern := []rune(p)
+	dp := make([][]int, len(str)+1)
+	for i := range dp {
+		dp[i] = make([]int, len(pattern)+1)
+		for j := range dp[i] {
+			dp[i][j] = -1
+		}
+	}
+	return isValid(str, pattern) && process_10(str, pattern, 0, 0, dp)
+}
+
+func process_10(str, pattern []rune, si, pi int, dp [][]int) bool {
+	if dp[si][pi] != -1 {
+		return dp[si][pi] == 1
+	}
+	if si == len(str) {
+		if pi == len(pattern) {
+			dp[si][pi] = 1
+			return true
+		}
+		if pi+1 < len(pattern) && pattern[pi+1] == '*' {
+			ans := process_10(str, pattern, si, pi+2, dp)
+			dp[si][pi] = boolToInt(ans)
+			return ans
+		}
+		dp[si][pi] = 0
+		return false
+	}
+	if pi == len(pattern) {
+		ans := si == len(str)
+		dp[si][pi] = boolToInt(ans)
+		return ans
+	}
+	if pi+1 >= len(pattern) || pattern[pi+1] != '*' {
+		ans := (str[si] == pattern[pi] || pattern[pi] == '.') && process_10(str, pattern, si+1, pi+1, dp)
+		dp[si][pi] = boolToInt(ans)
+		return ans
+	}
+	if pattern[pi] != '.' && str[si] != pattern[pi] {
+		ans := process_10(str, pattern, si, pi+2, dp)
+		dp[si][pi] = boolToInt(ans)
+		return ans
+	}
+	if process_10(str, pattern, si, pi+2, dp) {
+		dp[si][pi] = 1
+		return true
+	}
+	for si < len(str) && (str[si] == pattern[pi] || pattern[pi] == '.') {
+		if process_10(str, pattern, si+1, pi+2, dp) {
+			dp[si][pi] = 1
+			return true
+		}
+		si++
+	}
+	dp[si][pi] = 0
+	return false
+}
+
+func boolToInt(b bool) int {
+	if b {
+		return 1
+	}
+	return 0
 }
