@@ -1,12 +1,12 @@
 package main
 
 import (
-	"LeetCode-go/source/from_forceRecursive_to_DP"
+	"LeetCode-go/source/Go_LeetCode"
 	"fmt"
 )
 
 func main() {
-	N := 8
-	fmt.Println(from_forceRecursive_to_DP.NQueens(N))
-	//fmt.Println(from_forceRecursive_to_DP.SplitSumClosedSize_dp(arr))
+	arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	num := 11
+	fmt.Println(Go_LeetCode.NumSubArray_滑动窗口(arr, num))
 }

@@ -17,7 +17,7 @@ func myAtoi(s string) int {
 	}
 	str := []rune(s)
 
-	if !isValid(str) {
+	if !isValid_8(str) {
 		return 0
 	}
 
@@ -90,19 +90,19 @@ func removeHeadZero(str string) string {
 	}
 }
 
-//func isValid(chas []rune) bool {
-//	if chas[0] != '-' && chas[0] != '+' && (chas[0] < '0' || chas[0] > '9') {
-//		return false
-//	}
-//	if (chas[0] == '-' || chas[0] == '+') && len(chas) == 1 {
-//		return false
-//	}
-//
-//	for i := 1; i < len(chas); i++ {
-//		if chas[i] < '0' || chas[i] > '9' {
-//			return false
-//		}
-//	}
-//
-//	return true
-//}
+func isValid_8(chas []rune) bool {
+	if chas[0] != '-' && chas[0] != '+' && (chas[0] < '0' || chas[0] > '9') {
+		return false
+	}
+	if (chas[0] == '-' || chas[0] == '+') && len(chas) == 1 {
+		return false
+	}
+
+	for i := 1; i < len(chas); i++ {
+		if chas[i] < '0' || chas[i] > '9' {
+			return false
+		}
+	}
+
+	return true
+}

@@ -62,7 +62,7 @@ func process1(str, pattern []rune, si, pi int) bool {
 }
 */
 // 这是将上文的暴力递归版本改成记忆化搜索的版本，其实这一步已经是动态规划了
-func isValid(str []rune, pattern []rune) bool {
+func isValid_10(str []rune, pattern []rune) bool {
 	for _, ch := range str {
 		if ch == '.' || ch == '*' {
 			return false
@@ -89,7 +89,7 @@ func isMatch2(s string, p string) bool {
 			dp[i][j] = -1
 		}
 	}
-	return isValid(str, pattern) && process_10(str, pattern, 0, 0, dp)
+	return isValid_10(str, pattern) && process_10(str, pattern, 0, 0, dp)
 }
 
 func process_10(str, pattern []rune, si, pi int, dp [][]int) bool {

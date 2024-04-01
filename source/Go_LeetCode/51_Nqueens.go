@@ -2,6 +2,7 @@ package Go_LeetCode
 
 import (
 	"fmt"
+	"math"
 )
 
 func SolveNQueens(n int) [][]string {
@@ -51,7 +52,7 @@ func process8(i int, cases *[][]int, n int, res []int) int {
 	}
 	var counts = 0
 	for j := 0; j < n; j++ {
-		if isValid(res, i, j) {
+		if isValid_51(res, i, j) {
 			res[i] = j
 			counts += process8(i+1, cases, n, res)
 		}
@@ -59,13 +60,13 @@ func process8(i int, cases *[][]int, n int, res []int) int {
 	return counts
 }
 
-// 因为和同一个包中的其他函数冲突才注释掉这个函数
-// 这个函数是有用的，提交答案的时候要包括这个函数
-//func isValid(cases []int, i, j int) bool {
-//	for k := 0; k < i; k++ {
-//		if j == cases[k] || math.Abs(float64(cases[k]-j)) == math.Abs(float64(k-i)) {
-//			return false
-//		}
-//	}
-//	return true
-//}
+//因为和同一个包中的其他函数冲突才注释掉这个函数
+//这个函数是有用的，提交答案的时候要包括这个函数
+func isValid_51(cases []int, i, j int) bool {
+	for k := 0; k < i; k++ {
+		if j == cases[k] || math.Abs(float64(cases[k]-j)) == math.Abs(float64(k-i)) {
+			return false
+		}
+	}
+	return true
+}
