@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	arr := []string{"abc", "def", "ghi", "aabbcc", "defdef"}
-	fmt.Println(Go_LeetCode.Type2(arr))
+	arr := []int{3, 10, 5, 25, 2, 8}
+	fmt.Println("Max XOR subarray:", Go_LeetCode.MaxXorSubarray2(arr))
 }
