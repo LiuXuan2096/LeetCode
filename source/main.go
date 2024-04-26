@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
-	arr := []int{3, 10, 5, 25, 2, 8}
-	fmt.Println("Max XOR subarray:", Go_LeetCode.MaxXorSubarray2(arr))
+	arr := []int{3, 1, 4, 1, 5}
+	K := 5
+	fmt.Println(Go_LeetCode.GetMaxLessOrEqualK(arr, K))
 }
