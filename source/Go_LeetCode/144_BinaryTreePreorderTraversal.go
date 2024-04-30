@@ -5,11 +5,11 @@ https://leetcode.cn/problems/binary-tree-preorder-traversal/description/
 
 package Go_LeetCode
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+//type TreeNode struct {
+//	Val   int
+//	Left  *TreeNode
+//	Right *TreeNode
+//}
 
 func preorderTraversal(root *TreeNode) []int {
 	res := make([]int, 0) // 用于存放前序遍历的结果

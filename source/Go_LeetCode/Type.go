@@ -5,3 +5,9 @@ type Node struct {
 	Left  *Node
 	Right *Node
 }
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
